@@ -1,0 +1,6 @@
+{
+  "name": "CrimeSphere AI",
+  "description": "Production-grade Crime Intelligence, Predictive Policing & Criminal Network Investigation Platform for Karnataka State Police.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

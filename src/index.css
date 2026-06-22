@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom palette matching 'Technical Dashboard / Data Grid' */
+  --color-slate-950: #0A0B0D;
+  --color-slate-900: #111318;
+  --color-slate-905: #111318;
+  --color-slate-800: #2D3139;
+  --color-slate-805: #2D3139;
+  --color-slate-850: #2D3139;
+  --color-slate-900\/80: #2D3139;
+  --color-slate-800\/90: #2D3139;
+  --color-slate-800\/80: #2D3139;
+  --color-slate-800\/50: #2D313988;
+  --color-slate-850\/60: #2D313988;
+
+  /* Force Indigo aliases to map directly to brand Neon Cyan for seamless framework theme adoption */
+  --color-indigo-300: #88FFE4;
+  --color-indigo-400: #55FFD6;
+  --color-indigo-500: #00FFC2;
+  --color-indigo-600: #00FFC2;
+  --color-indigo-700: #00E4AD;
+  --color-indigo-950: #00FFC21a;
+  --color-indigo-950\/20: #00FFC20d;
+  --color-indigo-950\/40: #00FFC21a;
+  --color-indigo-600\/35: #00FFC215;
+
+  --color-rose-500: #F87171;
+  --color-rose-600: #E11D48;
+  --color-rose-950\/30: #F8717122;
+
+  --color-red-500: #F87171;
+  --color-red-600: #EF4444;
+  --color-red-950\/20: #F8717115;
+
+  --color-amber-500: #F97316;
+  --color-amber-400: #F97316;
+
+  --color-slate-100: #E0E2E5;
+  --color-slate-200: #E0E2E5;
+  --color-slate-300: #D1D5DB;
+  --color-slate-400: #9CA3AF;
+  --color-slate-500: #6B7280;
+  --color-slate-600: #4B5563;
+  --color-slate-700: #374151;
+}
+
+/* Global design rules matching Command Center theme */
+body {
+  background-color: #0A0B0D !important;
+  color: #E0E2E5 !important;
+  font-family: var(--font-sans);
+}
+
+/* Redefine active indigo layouts to brand neon cyan */
+.bg-indigo-600 {
+  background-color: #00FFC2 !important;
+  color: #0A0B0D !important;
+  font-weight: 700 !important;
+}
+
+.hover\:bg-indigo-500:hover {
+  background-color: #00FFD2 !important;
+  color: #0A0B0D !important;
+}
+
+.text-indigo-400, .text-indigo-300, .text-indigo-500 {
+  color: #00FFC2 !important;
+}
+
+/* Interactive elements: ensure selected active borders use neon cyan */
+.border-indigo-500, .border-indigo-600 {
+  border-color: #00FFC2 !important;
+}
+
+/* Standard default borders default to the clean slate-800 color */
+.border-indigo-955 {
+  border-color: #2D3139 !important;
+}
+
+/* Focus glows for input fields and selectors to enrich command center feel */
+input:focus, select:focus, textarea:focus {
+  border-color: #00FFC2 !important;
+  box-shadow: 0 0 10px rgba(0, 255, 194, 0.2) !important;
+  outline: none !important;
+}
+
+/* Selection aesthetics */
+::selection {
+  background-color: #00FFC2;
+  color: #0A0B0D;
+}
+
+/* Tech panel scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0B0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D3139;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FFC2;
+}
+
+/* Custom indicator states */
+.risk-high-indicator {
+  background-color: #F87171;
+  box-shadow: 0 0 8px #F87171;
+}
+
+.risk-moderate-indicator {
+  background-color: #F97316;
+  box-shadow: 0 0 8px #F97316;
+}
+
+.risk-low-indicator {
+  background-color: #00FFC2;
+  box-shadow: 0 0 8px #00FFC2;
+}
+
+/* 
+============================================================
+TECHNICAL DASHBOARD & COMMAND CENTER GRID SYSTEM
+============================================================
+*/
+
+/* Core Grid uniformity for the dashboard modules */
+.grid.gap-4, .grid.gap-5, .grid.gap-6 {
+  gap: 1.25rem !important; /* Forces tidy, dense gap-5 across all dashboards */
+}
+
+/* Modern styling for the main container panel cards */
+div.bg-slate-900.border,
+div[class*="bg-slate-900"][class*="border"][class*="rounded"] {
+  background-color: #111318 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgba(0, 255, 194, 0.15) !important; /* Uniform thin neon-cyan bordered panels */
+  border-radius: 0.75rem !important; /* Professional, sleek, cohesive corners */
+  padding: 1.25rem !important; /* Highly consistent, uniform dashboard padding */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.02) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* High-tech glow and slight lift on hover to enhance interactive tactile intelligence workspace */
+div.bg-slate-900.border:hover,
+div[class*="bg-slate-900"][class*="border"][class*="rounded"]:hover {
+  border-color: rgba(0, 255, 194, 0.45) !important;
+  box-shadow: 0 10px 30px rgba(0, 255, 194, 0.08), 0 0 1px rgba(0, 255, 194, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+/* Pseudo-corner accents for military grade UI styling on deep dashboard container panels */
+div.bg-slate-900.border::before,
+div[class*="bg-slate-900"][class*="border"][class*="rounded"]::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-top: 2px solid #00FFC2 !important;
+  border-left: 2px solid #00FFC2 !important;
+  border-radius: 2px 0 0 0 !important;
+  opacity: 0.5 !important;
+  transition: all 0.3s ease !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+div.bg-slate-900.border::after,
+div[class*="bg-slate-900"][class*="border"][class*="rounded"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-top: 2px solid #00FFC2 !important;
+  border-right: 2px solid #00FFC2 !important;
+  border-radius: 0 2px 0 0 !important;
+  opacity: 0.5 !important;
+  transition: all 0.3s ease !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+/* Enhance corner accents on active panel hover state */
+div.bg-slate-900.border:hover::before,
+div[class*="bg-slate-900"][class*="border"][class*="rounded"]:hover::before,
+div.bg-slate-900.border:hover::after,
+div[class*="bg-slate-900"][class*="border"][class*="rounded"]:hover::after {
+  opacity: 1 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Standardize nested slate-950 layouts to blend perfectly without double corner indicators */
+.bg-slate-950,
+[class*="bg-slate-950"] {
+  background-color: #0A0B0D !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Remove corner highlights from nested elements inside cards */
+.bg-slate-950::before,
+.bg-slate-950::after {
+  content: none !important;
+}
+
+/* Uniform subtle neon-cyan grid overlays / lines for visualization containers */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(0, 255, 194, 0.06) !important;
+}
+
+/* Standardize Recharts tooltip styles to fit command center design */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #0A0B0D !important;
+  border-color: rgba(0, 255, 194, 0.3) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
